@@ -25,7 +25,7 @@ const jsonLd = {
     name: "Panamá",
   },
   jobTitle:
-    "Estudiante de Ingeniería Mecatrónica | Automatización | Software | Proyectos técnicos",
+    "Estudiante de Ingeniería en Mecatrónica | Automatización | IA aplicada | Proyectos técnicos",
   affiliation: {
     "@type": "EducationalOrganization",
     name: "Universidad Latina de Panamá",
@@ -37,6 +37,7 @@ const jsonLd = {
     "Sensores",
     "Programación",
     "Análisis de datos",
+    "Inteligencia artificial aplicada",
     "Documentación técnica",
   ],
 };
@@ -68,12 +69,12 @@ export default function Home() {
               Formación técnica con enfoque en automatización y aprendizaje aplicado
             </h2>
             <p className="mt-6 max-w-3xl text-base leading-8 text-muted-text">
-              Soy estudiante de Ingeniería Mecatrónica en la Universidad Latina
-              de Panamá. Me interesan la automatización, la electrónica aplicada,
-              Arduino, sensores, programación y el análisis de datos. En mis
-              proyectos busco entender el problema, definir reglas claras,
-              probar soluciones, validar resultados y documentar el proceso de
-              forma ordenada.
+              Soy estudiante de Ingeniería en Mecatrónica en la Universidad Latina
+              de Panamá, en tercer cuatrimestre. Me interesan la automatización,
+              la electrónica aplicada y el uso de la IA para mejorar procesos
+              reales. En mis proyectos busco entender el problema, definir reglas
+              claras, probar, validar resultados y documentar el proceso. Dos de
+              ellos están en línea y funcionando todos los días.
             </p>
           </div>
           <aside className="project-card rounded-2xl border border-primary-blue/15 bg-white p-6 shadow-sm">
@@ -81,9 +82,8 @@ export default function Home() {
               Objetivo actual
             </p>
             <p className="mt-4 text-lg font-semibold leading-7 text-navy">
-              Fortalecer mi formación técnica y aportar en entornos donde pueda
-              aprender sobre automatización, mantenimiento, electrónica,
-              programación y procesos industriales.
+              Una pasantía o práctica donde pueda aportar y aprender en
+              automatización, mantenimiento, mejora de procesos y tecnología.
             </p>
           </aside>
         </Reveal>
@@ -99,10 +99,10 @@ export default function Home() {
             <SectionHeading
               eyebrow="Proyectos"
               title="Evidencia de automatización, programación y resolución de problemas"
-              description="Estos proyectos muestran práctica técnica, análisis de procesos, documentación, validación de información y desarrollo de soluciones sin presentar prototipos como productos terminados."
+              description="Dos sistemas en línea que puedes abrir ahora mismo y dos proyectos de hardware con Arduino, sensores y electroimanes."
             />
           </Reveal>
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
             {projects.map((project, index) => (
               <Reveal key={project.title} delay={index * 90}>
                 <ProjectCard project={project} />
@@ -204,9 +204,8 @@ export default function Home() {
               Proyectos independientes de IA, software y automatización
             </h2>
             <p className="mt-1 text-sm leading-6 text-muted-text">
-              Complementan mi formación técnica al practicar análisis de
-              problemas, integración de herramientas, documentación y validación
-              de resultados.
+              Complementan mi formación técnica: análisis de problemas,
+              integración de herramientas, pruebas y validación de resultados.
             </p>
           </div>
           <a

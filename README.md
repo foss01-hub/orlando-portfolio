@@ -1,6 +1,6 @@
 # Orlando Jordán Núñez - Portafolio técnico
 
-Portafolio personal para complementar la postulación de Orlando Jordán Núñez a la Escuela de Aprendices del Canal de Panamá.
+Portafolio técnico de Orlando Jordán Núñez, estudiante de Ingeniería en Mecatrónica en la Universidad Latina de Panamá.
 
 El sitio presenta un perfil de estudiante de Ingeniería Mecatrónica con enfoque en automatización, software, electrónica y proyectos técnicos.
 

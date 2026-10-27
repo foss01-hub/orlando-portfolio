@@ -5,9 +5,9 @@ import ParticleField from "@/components/ParticleField";
 const chips = [
   "Automatización",
   "Arduino y sensores",
+  "IA aplicada a procesos",
   "Programación",
-  "Análisis de datos",
-  "Documentación técnica",
+  "Datos y validación",
 ] as const;
 
 export default function Hero() {
@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 sm:py-18 md:grid-cols-[1.05fr_0.95fr] md:py-22 lg:px-8">
         <div className="order-2 md:order-1">
           <p className="mb-5 inline-flex rounded-full border border-primary-blue/20 bg-light-blue px-3 py-1 text-sm font-medium text-primary-blue">
-            Panamá - Portafolio complementario para postulación técnica
+            Panamá - Portafolio técnico
           </p>
           <h1
             id="hero-title"
@@ -31,14 +31,13 @@ export default function Hero() {
             Orlando Jordán Núñez
           </h1>
           <p className="mt-4 text-xl font-semibold text-main-text sm:text-2xl">
-            Estudiante de Ingeniería Mecatrónica | Automatización | Software | Proyectos técnicos
+            Estudiante de Ingeniería en Mecatrónica | Automatización | IA aplicada | Proyectos técnicos
           </p>
           <p className="mt-6 max-w-2xl text-base leading-8 text-muted-text sm:text-lg">
-            Estudiante de Ingeniería Mecatrónica en la Universidad Latina de
-            Panamá, con interés en automatización, electrónica, programación,
-            sensores y análisis de datos. Este portafolio reúne proyectos
-            técnicos y de software que muestran capacidad de aprendizaje,
-            documentación, validación de información y resolución de problemas.
+            Estudiante de Ingeniería en Mecatrónica en la Universidad Latina de
+            Panamá. Construyo herramientas de automatización e IA que hoy
+            funcionan en línea, y proyectos de hardware con Arduino, sensores y
+            electroimanes. Aquí están, con enlaces para verlos funcionando.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -57,7 +56,7 @@ export default function Hero() {
             </a>
           </div>
 
-          <ul className="mt-8 flex flex-wrap gap-2" aria-label="Portfolio focus areas">
+          <ul className="mt-8 flex flex-wrap gap-2" aria-label="Áreas de enfoque">
             {chips.map((chip) => (
               <li
                 key={chip}
@@ -74,7 +73,7 @@ export default function Hero() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-white">
               <Image
                 src="/orlando-jordan.jpg"
-                alt="Professional portrait of Orlando Jordan"
+                alt="Retrato profesional de Orlando Jordán Núñez"
                 fill
                 priority
                 sizes="(min-width: 768px) 420px, 88vw"

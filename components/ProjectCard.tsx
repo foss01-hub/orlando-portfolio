@@ -26,19 +26,38 @@ function ProjectVisual({ type }: { type: Project["visual"] }) {
     );
   }
 
-  if (type === "legal") {
+  if (type === "tides") {
     return (
-      <div className="grid h-full grid-cols-[1fr_auto_1fr] items-center gap-3" aria-hidden="true">
-        <div className="project-visual-node h-full rounded-lg border border-navy/10 bg-white p-3 shadow-sm">
-          <div className="mb-3 h-2 w-16 rounded-full bg-primary-blue/35" />
-          <div className="mb-2 h-2 rounded-full bg-navy/15" />
-          <div className="mb-2 h-2 rounded-full bg-navy/10" />
-          <div className="h-2 w-2/3 rounded-full bg-status-green/25" />
+      <div className="flex h-full items-end gap-1.5" aria-hidden="true">
+        {[38, 62, 84, 70, 44, 26, 40, 66, 88, 72, 48, 30].map((h, i) => (
+          <div
+            key={i}
+            className="project-visual-node flex-1 rounded-t bg-primary-blue/25"
+            style={{ height: `${h}%`, opacity: 0.55 + (h / 100) * 0.45 }}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  if (type === "brake") {
+    return (
+      <div className="grid h-full grid-cols-[auto_auto_1fr] items-center gap-3" aria-hidden="true">
+        <div className="project-visual-node h-20 w-20 rounded-full border-[6px] border-navy/20 bg-white shadow-sm">
+          <div className="m-auto mt-[22px] h-6 w-6 rounded-full bg-primary-blue/30" />
         </div>
-        <div className="h-px w-6 bg-primary-blue/35" />
-        <div className="project-visual-node rounded-lg border border-status-green/20 bg-white p-3 shadow-sm">
-          <div className="mx-auto mb-2 h-8 w-8 rounded-full border-4 border-primary-blue/35" />
-          <div className="mx-auto h-1.5 w-12 rounded-full bg-status-green/45" />
+        <div className="project-visual-node grid gap-1 rounded-lg border border-primary-blue/18 bg-light-blue p-2 shadow-sm">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <div key={i} className="h-1.5 w-10 rounded-full bg-status-green/45" />
+          ))}
+        </div>
+        <div className="project-visual-node rounded-lg border border-navy/10 bg-white p-2 shadow-sm">
+          <div className="mb-2 h-1.5 w-12 rounded-full bg-primary-blue/35" />
+          <div className="flex h-8 items-end gap-1">
+            <div className="h-full flex-1 rounded-t bg-navy/15" />
+            <div className="h-2/3 flex-1 rounded-t bg-primary-blue/25" />
+            <div className="h-1/3 flex-1 rounded-t bg-status-green/35" />
+          </div>
         </div>
       </div>
     );
@@ -113,6 +132,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           ))}
         </ul>
       </div>
+
+      {project.href ? (
+        <a
+          href={project.href}
+          target="_blank"
+          rel="noreferrer"
+          className="button-press mt-6 inline-flex justify-center rounded-lg border border-primary-blue/25 bg-light-blue px-4 py-2.5 text-sm font-semibold text-primary-blue hover:bg-primary-blue hover:text-white"
+        >
+          {project.hrefLabel ?? "Ver proyecto"}
+        </a>
+      ) : null}
     </article>
   );
 }

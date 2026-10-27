@@ -3,7 +3,7 @@ export const contact = {
   emailHref: "mailto:pragma.pa@gmail.com",
   linkedIn: "https://www.linkedin.com/in/orlandojordannunez",
   location: "Panamá",
-  pdfHref: "/Orlando_Jordan_Professional_Portfolio_EN.pdf",
+  pdfHref: "/CV_Orlando_Andres_Jordan_Nunez.pdf",
 } as const;
 
 export type Project = {
@@ -13,16 +13,43 @@ export type Project = {
   description: string;
   tags: string[];
   capabilities: string[];
-  visual: "pulse" | "arduino" | "legal";
+  visual: "pulse" | "arduino" | "tides" | "brake";
+  href?: string;
+  hrefLabel?: string;
 };
 
 export const projects: Project[] = [
   {
-    status: "Proyecto funcional",
-    title: "Pragma Pulse",
-    subtitle: "Automatización de reportes e información",
+    status: "En línea",
+    title: "MangroTides",
+    subtitle: "Mareas y condiciones de pesca para Panamá",
     description:
-      "Sistema funcional que recopila información de varias fuentes y produce reportes programados mediante un flujo conectado a Telegram. El proyecto demuestra integración backend, ejecución programada, procesamiento de información y entrega confiable de resultados.",
+      "Web de mareas con 15 puntos en 8 zonas del Pacífico y el Caribe. Un lector propio en Python extrae las tablas de mareas en PDF de la ACP y las compara contra una API externa en cada despliegue. Incluye un asistente de IA que consulta la base de datos mediante herramientas para responder con datos reales.",
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Python",
+      "OpenAI API",
+      "GitHub Actions",
+    ],
+    capabilities: [
+      "Extracción y validación de datos",
+      "214 pruebas automatizadas e integración continua",
+      "IA conectada a datos reales (tool calling)",
+      "Modo sin señal para uso en el agua",
+    ],
+    visual: "tides",
+    href: "https://mangrotides-production.up.railway.app",
+    hrefLabel: "Ver sitio",
+  },
+  {
+    status: "En línea",
+    title: "Pragma Pulse",
+    subtitle: "Automatización de reportes de mercado",
+    description:
+      "Sistema que recopila información de varias fuentes y publica reportes programados varias veces al día en Telegram, con un archivo web con búsqueda y filtros. Tiene respaldo entre proveedores de datos para que la falla de una API no detenga el proceso, y funciona sin interrupción desde su lanzamiento.",
     tags: [
       "Node.js",
       "Express",
@@ -33,55 +60,50 @@ export const projects: Project[] = [
     ],
     capabilities: [
       "Integración de sistemas",
-      "Automatización de procesos",
-      "Procesamiento de información",
-      "Resolución de problemas técnicos",
+      "Tolerancia a fallas",
+      "Ejecución programada",
+      "Auditoría de seguridad básica",
     ],
     visual: "pulse",
+    href: "https://pragma-brief-production.up.railway.app/",
+    hrefLabel: "Ver archivo",
   },
   {
-    status: "Proyecto técnico",
-    title: "Automatización de iluminación con Arduino",
-    subtitle: "Control básico con sensores y lógica de automatización",
+    status: "Feria de Ingeniería Q2026-1",
+    title: "Freno electromagnético experimental",
+    subtitle: "Prototipo de frenado con electroimanes",
     description:
-      "Proyecto orientado al control automático de iluminación usando Arduino, sensores y lógica de activación. Sirve como práctica de electrónica aplicada, lectura de señales, conexión de componentes y documentación de funcionamiento.",
+      "Prototipo presentado en la Feria de Proyectos de Ingeniería de la Universidad Latina, categoría Prototipo. Lideré el diseño, los materiales, el armado y la presentación. La carcasa se diseñó en Fusion 360 y se imprimió en 3D. Rindió por debajo de lo esperado y el análisis dejó claro que la fuerza depende del bobinado y del número de vueltas.",
     tags: [
-      "Arduino",
-      "Sensores",
-      "Electrónica básica",
-      "C++",
-      "Automatización",
-      "Documentación técnica",
+      "Arduino Uno",
+      "Motor DC 12 V",
+      "Tacómetro óptico",
+      "Electroimanes",
+      "Fusion 360",
+      "Impresión 3D",
     ],
+    capabilities: [
+      "Liderazgo de proyecto",
+      "Diseño mecánico y CAD",
+      "Integración electromecánica",
+      "Análisis de resultados",
+    ],
+    visual: "brake",
+  },
+  {
+    status: "Proyecto académico",
+    title: "Automatización de iluminación",
+    subtitle: "Control con sensores PIR y LDR",
+    description:
+      "Control automático de iluminación con Arduino, sensores de presencia y de luz, relé y lógica temporizada. Práctica de electrónica aplicada, lectura de señales, conexión de componentes y pruebas de funcionamiento.",
+    tags: ["Arduino", "Sensor PIR", "Sensor LDR", "Relé", "C++"],
     capabilities: [
       "Lectura de sensores",
       "Control de actuadores",
       "Pruebas iterativas",
-      "Aprendizaje técnico aplicado",
-    ],
-    visual: "arduino",
-  },
-  {
-    status: "Concepto y prototipo",
-    title: "legaldoc-ai",
-    subtitle: "Datos estructurados, reglas de validación y revisión humana",
-    description:
-      "Concepto y prototipo para capturar información estructurada, aplicar reglas, validar consistencia y generar borradores de documentos para revisión profesional. Se presenta como caso de estudio de automatización, no como producto comercial terminado.",
-    tags: [
-      "OpenAI API",
-      "Node.js",
-      "Supabase",
-      "Reglas de validación",
-      "Datos estructurados",
-      "Revisión humana",
-    ],
-    capabilities: [
-      "Diseño de procesos",
-      "Validación de datos",
-      "Uso responsable de IA",
       "Documentación técnica",
     ],
-    visual: "legal",
+    visual: "arduino",
   },
 ];
 
@@ -95,22 +117,22 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     organization: "Pragma AI Studio",
-    role: "Proyectos independientes de IA y automatización",
-    dates: "2026 - Present",
+    role: "Fundador y desarrollador (proyectos propios)",
+    dates: "Enero 2026 - Presente",
     bullets: [
-      "Desarrollo proyectos prácticos para automatización, procesamiento de información y documentación técnica.",
-      "Integro herramientas como Node.js, n8n, Google Apps Script, REST APIs, Supabase y Railway en soluciones de aprendizaje aplicado.",
-      "Analizo procesos manuales, defino reglas de validación, pruebo salidas y documento el funcionamiento de cada flujo.",
+      "Desarrollé MangroTides y Pragma Pulse, dos sistemas en línea con bases de datos, tareas programadas y validación automática de datos.",
+      "Automaticé un flujo administrativo en Google Sheets con Apps Script: facturas en PDF desde plantilla, alertas por correo de inventario bajo y respaldo diario.",
+      "Construí un sistema de citas con reserva por enlace, confirmación por correo y panel administrativo con verificación antes de cancelar.",
     ],
   },
   {
-    organization: "INEC - Comptroller General of Panama",
-    role: "Práctica escolar",
-    dates: "September - November 2025",
+    organization: "INEC - Contraloría General de la República de Panamá",
+    role: "Practicante",
+    dates: "Septiembre - Noviembre 2025",
     bullets: [
-      "Revisé y codifiqué registros institucionales y cuestionarios digitales como parte de una práctica escolar.",
-      "Apoyé tareas de clasificación, revisión de consistencia y control de calidad de datos.",
-      "Identifiqué inconsistencias y validé información antes de pasarla a la siguiente etapa de procesamiento.",
+      "Revisé y codifiqué registros y cuestionarios digitales conforme a los procedimientos establecidos.",
+      "Comparé datos e identifiqué inconsistencias para apoyar la calidad y trazabilidad de los registros.",
+      "Roté entre funciones de revisor/codificador y analista de datos bajo criterios de confidencialidad.",
     ],
   },
 ];
@@ -123,53 +145,56 @@ export type SkillGroup = {
 export const skillGroups: SkillGroup[] = [
   {
     category: "Automatización y electrónica",
-    skills: ["Arduino", "Sensores", "Control básico", "Electrónica aplicada"],
+    skills: ["Arduino", "Sensores y actuadores", "Control básico", "Circuitos eléctricos"],
   },
   {
     category: "Programación",
-    skills: ["C++", "Node.js", "Python - en desarrollo", "REST APIs"],
+    skills: ["C++", "Java", "JavaScript / TypeScript", "Python básico"],
   },
   {
     category: "Datos y backend",
-    skills: ["PostgreSQL", "Supabase", "Validación de datos", "Revisión de consistencia"],
+    skills: ["PostgreSQL", "Node.js", "REST APIs", "Validación de datos"],
   },
   {
-    category: "Herramientas técnicas",
-    skills: ["Fusion 360", "AutoCAD", "Railway", "Fundamentos de Git"],
+    category: "Diseño y fabricación",
+    skills: ["Fusion 360", "AutoCAD", "Impresión 3D", "Metrología"],
+  },
+  {
+    category: "IA y automatización digital",
+    skills: ["APIs de IA (OpenAI, Claude)", "n8n y Make", "Google Apps Script", "Mapeo de procesos"],
   },
   {
     category: "Capacidades profesionales",
     skills: [
       "Documentación técnica",
-      "Aprendizaje independiente",
       "Resolución de problemas",
       "Pruebas y mejora iterativa",
+      "Aprendizaje independiente",
     ],
-  },
-  {
-    category: "Automatización digital",
-    skills: ["n8n", "Google Apps Script", "Diseño de flujos", "Mapeo de procesos"],
   },
 ];
 
 export const education = {
   institution: "Universidad Latina de Panamá",
-  program: "Ingeniería Mecatrónica",
-  dates: "2026 - 2030 - En curso",
+  program: "Ingeniería en Mecatrónica",
+  dates: "Enero 2026 - En curso | Graduación estimada: 2030",
   coursework: [
-    "Programación para ingenieros",
-    "Física aplicada",
-    "Cálculo integral",
-    "Diseño asistido por computadora",
-    "Metrología",
+    "Programación para Ingenieros (C++)",
+    "Programación (Java)",
+    "Circuitos Eléctricos I",
+    "Física Aplicada I y II",
+    "Cálculo",
+    "Álgebra de Vectores y Matrices",
+    "Dibujo Técnico (AutoCAD)",
+    "Metrología y Normalización",
   ],
   secondary:
-    "Centro Bilingüe Vista Alegre - Bachiller en Tecnología",
+    "Centro Bilingüe Vista Alegre - Bachiller en Tecnología (2025)",
 } as const;
 
 export const languages = [
   "Español - Nativo",
-  "Inglés - Intermedio, conversacional y técnico",
+  "Inglés - Intermedio, con lectura técnica y comunicación escrita",
 ] as const;
 
 export const navItems = [

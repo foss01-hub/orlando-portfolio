@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const description =
-  "Portafolio de Orlando Jordán Núñez, estudiante de Ingeniería Mecatrónica enfocado en automatización, electrónica, programación, análisis de datos y proyectos técnicos.";
+  "Portafolio de Orlando Jordán Núñez, estudiante de Ingeniería en Mecatrónica enfocado en automatización, electrónica, IA aplicada y proyectos técnicos.";
 
 export const metadata: Metadata = {
   title: "Orlando Jordán Núñez | Portafolio técnico",
