@@ -1,0 +1,10 @@
+{
+  "$schema": "https://railway.com/railway.schema.json",
+  "build": {
+    "buildCommand": "pnpm run build"
+  },
+  "deploy": {
+    "startCommand": "NODE_OPTIONS=--max-old-space-size=192 exec node_modules/.bin/next start",
+    "restartPolicyType": "ON_FAILURE"
+  }
+}
